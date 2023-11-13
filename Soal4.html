@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Matematika</title>
+  </head>
+  <body>
+    <label for="angka1">Masukkan angka pertama:</label>
+    <input type="number" id="angka1" />
+
+    <label for="angka2">Masukkan angka kedua:</label>
+    <input type="number" id="angka2" />
+
+    <button onclick="hitung()">Hitung</button>
+
+    <div id="hasilPerhitungan"></div>
+    <div id="hasilTerbesar"></div>
+
+    <script>
+      function hitung() {
+        // Mendapatkan nilai angka pertama dan angka kedua dari input
+        var angka1 = parseFloat(document.getElementById("angka1").value);
+        var angka2 = parseFloat(document.getElementById("angka2").value);
+
+        // Mengecek apakah input valid (bukan NaN)
+        if (isNaN(angka1) || isNaN(angka2)) {
+          document.getElementById("hasilPerhitungan").innerHTML = "Masukkan angka yang valid.";
+          document.getElementById("hasilTerbesar").innerHTML = "";
+          return;
+        }
+
+        // Melakukan perhitungan matematika
+        var penjumlahan = angka1 + angka2;
+        var pengurangan = angka1 - angka2;
+        var perkalian = angka1 * angka2;
+        var pembagian = angka1 / angka2;
+
+        // Menampilkan hasil perhitungan
+        document.getElementById("hasilPerhitungan").innerHTML =
+          "<h2>Hasil Perhitungan:</h2>" + "<p>Penjumlahan: " + penjumlahan + "</p>" + "<p>Pengurangan: " + pengurangan + "</p>" + "<p>Perkalian: " + perkalian + "</p>" + "<p>Pembagian: " + pembagian + "</p>";
+
+        // Mencari dan menampilkan bilangan terbesar
+        var terbesar = angka1 > angka2 ? angka1 : angka2;
+        document.getElementById("hasilTerbesar").innerHTML = "<h2>Bilangan Terbesar:</h2><p>" + terbesar + "</p>";
+      }
+    </script>
+  </body>
+</html>

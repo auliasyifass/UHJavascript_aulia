@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Makanan dan Minuman</title>
+  </head>
+  <body>
+    <label for="kategoriMenu">Pilih kategori menu:</label>
+    <input type="text" id="kategoriMenu" placeholder="Makanan/Minumam" />
+    <button onclick="tampilkanMenu()">Tampilkan Menu</button>
+
+    <div id="hasilMenu"></div>
+
+    <script>
+      function tampilkanMenu() {
+        // Mendapatkan nilai kategori menu dari input
+        var kategoriMenu = document.getElementById("kategoriMenu").value.trim();
+
+        // Mendapatkan elemen div hasilMenu
+        var hasilMenuDiv = document.getElementById("hasilMenu");
+
+        // Mengecek kategori menu dan menampilkan daftar makanan atau minuman
+        if (kategoriMenu.toLowerCase() === "makanan") {
+          var daftarMakanan = ["Bakso", "Mie Ayam", "Soto", "Kambing Guling", "Ayam Bakar", "Sate", "Mie Goreng", "Mendoan"];
+          // Menampilkan daftar makanan di dalam elemen div
+          hasilMenuDiv.innerHTML = "<h2>Daftar Makanan:</h2><ul><li>" + daftarMakanan.join("</li><li>") + "</li></ul>";
+        } else if (kategoriMenu.toLowerCase() === "minuman") {
+          var daftarMinuman = ["Es Milo", "Es Teh Manis", "Es Jeruk", "Es Campur", "Es Kopi Susu", "Es Teh Tawar", "Es Dawet"];
+          // Menampilkan daftar minuman di dalam elemen div
+          hasilMenuDiv.innerHTML = "<h2>Daftar Minuman:</h2><ul><li>" + daftarMinuman.join("</li><li>") + "</li></ul>";
+        } else {
+          // Menampilkan pesan kesalahan di dalam elemen div
+          hasilMenuDiv.innerHTML = "<p>Pilihan tidak valid. Silahkan pilih menu yang benar</p>";
+        }
+      }
+    </script>
+  </body>
+</html>

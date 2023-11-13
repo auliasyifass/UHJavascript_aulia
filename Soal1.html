@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Membuat array kendaraan
+      let kendaraan = ["mobil", "motor", "pesawat", "kapal", "sepeda", "helikopter", "truk", "jetski", "kereta", "skuter"];
+
+      // Menampilkan seluruh data dalam array
+      document.write("<p>Seluruh Kendaraan: " + kendaraan.join(", ") + "</p>");
+
+      // Mencari index dari kendaraan 'mobil'
+      let indexMobil = kendaraan.indexOf("mobil");
+      document.write("<p>Index Mobil: " + indexMobil + "</p>");
+
+      // Menghapus satu data kendaraan dengan unshift
+      let kendaraanTerhapus = kendaraan.shift();
+      document.write("<p>Kendaraan yang Dihapus: " + kendaraanTerhapus + "</p>");
+      document.write("<p>Array Setelah Unshift: " + kendaraan.join(", ") + "</p>");
+    </script>
+  </body>
+</html>
